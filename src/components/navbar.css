@@ -1,0 +1,19 @@
+.nav{
+    background-color: black;
+}
+
+.nav-logo{
+    width: 10rem;
+    height: 10rem;
+}
+
+.nav-list{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 12rem 1rem 7rem;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
