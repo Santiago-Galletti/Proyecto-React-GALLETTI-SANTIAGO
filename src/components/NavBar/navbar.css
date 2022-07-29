@@ -1,10 +1,14 @@
 .nav{
     background-color: black;
+    height: 25vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
 .nav-logo{
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 5rem;
 }
 
 .nav-list{
@@ -12,7 +16,7 @@
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
-    padding: 1rem 12rem 1rem 7rem;
+    padding: 0rem 12rem 0rem 7rem;
     list-style: none;
     text-decoration: none;
     color: white;
