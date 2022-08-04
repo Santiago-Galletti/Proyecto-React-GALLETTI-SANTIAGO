@@ -1,0 +1,39 @@
+.counter{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+}
+
+.counter-button{
+    background-color: rgb(161, 161, 161);
+    padding: 0.1rem 0.5rem;
+    border-radius: 6rem;
+    font-size: 1.3rem;
+}
+
+.counter-button:hover{
+    background-color: white;  
+    transition: 1s;
+}
+
+.hola{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+
+.counter-confirm-button{
+    background-color: rgb(161, 161, 161);
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+    border-radius: 6rem;
+}
+
+.counter-confirm-button:hover{
+    background-color: white;  
+    transition: 1s;
+}

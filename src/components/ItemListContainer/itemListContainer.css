@@ -1,6 +1,13 @@
-.title{
+.main{
     font: 3rem;
     margin: 3rem 5rem 0rem 5rem;
-    padding: 1rem 0rem 15rem 3rem;
+    padding: 3rem;
     border: solid black;
+}
+
+.productsDisplay{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin-top: 2rem;
 }

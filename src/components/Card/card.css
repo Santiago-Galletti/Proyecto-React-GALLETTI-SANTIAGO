@@ -1,0 +1,15 @@
+.product-card{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+    width: 20vw;
+    border: white solid;
+    font-size: 1.2rem;
+}
+
+.product-card-img{
+    height: 300px;
+    width: 200px;
+}
