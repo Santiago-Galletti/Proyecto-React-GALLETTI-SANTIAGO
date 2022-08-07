@@ -1,3 +1,4 @@
+import React, {useEffect, useState} from 'react'
 import "./navbar.css";
 import CartWidget from "../CartWidget/CartWidget";
 

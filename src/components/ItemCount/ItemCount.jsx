@@ -1,10 +1,10 @@
 import { isDisabled } from "@testing-library/user-event/dist/utils";
-import React from "react";
+import React, {useEffect, useState} from 'react'
 import "./itemCount.css"
 
 function ItemCount(props) {
     
-    const [items, setItems] = React.useState(1);
+    const [items, setItems] = useState(1);
 
     const sumItems = () => {
         items < props.stock ? setItems(items + 1) : alert("No hay mas stock");

@@ -1,13 +1,11 @@
 .main{
-    font: 3rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    height: 100vh;
+    font-size: 2rem;
     margin: 3rem 5rem 0rem 5rem;
-    padding: 3rem;
+    padding: 1rem 3rem 3rem 3rem;
     border: solid black;
 }
 
-.productsDisplay{
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    margin-top: 2rem;
-}

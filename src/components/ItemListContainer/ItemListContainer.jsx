@@ -1,5 +1,6 @@
+import React, {useEffect, useState} from 'react'
 import "./itemListContainer.css"
-import Card from "../Card/Card";
+import ItemList from "../ItemList/ItemList";
 
 const infoProducts = [
     {
@@ -25,14 +26,28 @@ const infoProducts = [
     }
 ];
 
-function ItemListContainer(){
+function getProducts () {
+    return new Promise ((resolve) => {
+        setTimeout(() => {
+            resolve(infoProducts)
+        }, 2000)
+    })
+}
+
+function ItemListContainer () {
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        getProducts().then(item => {
+            setData(item)
+        })
+    }, []);
+    
     return (
         <div className="main">
             <h2 className="title">Nuestros productos disponibles:</h2>
-            <div className="productsDisplay">
-                <Card data={infoProducts[0]}/>
-                <Card data={infoProducts[1]}/>
-                <Card data={infoProducts[2]}/>
+            <div>
+                <ItemList data={data}/>
             </div>
         </div> 
     )
