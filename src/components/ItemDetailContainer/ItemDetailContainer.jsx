@@ -1,33 +1,28 @@
 import React, {useEffect, useState} from 'react';
 import ItemDetail from "../ItemDetail/ItemDetail";
-import infoProducts from "../ItemListContainer/ItemListContainer";
+import data from "../../data/data";
 import "./itemDetailContainer.css"
+import { useParams } from 'react-router-dom'
 
-const productoEncontrado = [
-    {
-    id : "2",
-    name : "Thor: Love and Thunder",
-    img : "https://terrigen-cdn-dev.marvel.com/content/prod/1x/thorloveandthunder_lob_crd_04.jpg",
-    price : "$1500",
-    stock : 8
-    }
-];
 
-function getItemdetail () {
-    return new Promise ((resolve) => {
-        setTimeout(() => {
-            resolve(productoEncontrado[0])
-        }, 3000)
-    })
-}
 
 function ItemDetailContainer() {
-    const [detail, setDetail] = useState([])
 
+    const idURL = useParams().id
+
+    function getItemdetail () {
+        return new Promise ((resolve, reject) => {
+            let filmRequested = data.find( film => film.id == idURL);
+            filmRequested === undefined ? reject("Disculpe, por el momento no tenemos esa pelicula") : resolve(filmRequested)
+        })
+    }
+
+    const [detail, setDetail] = useState([])
     useEffect(() => {
         getItemdetail().then(item => {
             setDetail(item)
         })
+        .catch((error) => alert(error)) 
     }, []);
 
     return (

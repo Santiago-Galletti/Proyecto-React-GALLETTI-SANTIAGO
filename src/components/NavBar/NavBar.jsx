@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { Link } from "react-router-dom";
 import "./navbar.css";
 import CartWidget from "../CartWidget/CartWidget";
 
@@ -6,11 +7,21 @@ function NavBar(){
     return (
         <div className="nav">
             <ul className="nav-list">
-                <img className="nav-logo" src="http://assets.stickpng.com/images/585f9333cb11b227491c3581.png" alt="logo"></img>
-                <li>Home</li>
-                <li>Productos</li>
-                <li>Nosotros</li>
-                <li>FAQ</li>
+                <Link to="/">
+                    <img className="nav-logo" src="http://assets.stickpng.com/images/585f9333cb11b227491c3581.png" alt="logo"></img>
+                </Link>
+                <Link to="/">
+                    <li className="nav-link">Home</li>
+                </Link>
+                <Link to="/category/avengers">
+                    <li className="nav-link">Avengers</li>
+                </Link>
+                <Link to="/category/thor">
+                    <li className="nav-link">Thor</li>
+                </Link>
+                <Link to="/category/spiderman">
+                    <li className="nav-link">Spiderman</li>
+                </Link>
                 <CartWidget />
             </ul>
         </div>
