@@ -3,6 +3,13 @@ import "./itemDetail.css"
 import ItemCount from '../ItemCount/ItemCount';
 
 function ItemDetail(props) {
+
+    const [filmsInCart, setFilmsInCart] = useState(0);
+
+    function addToCart (items) {
+        setFilmsInCart(items)
+    }
+
     return (
         <div className="a">
             <h2 className="product-title">{props.detail.name}</h2>
@@ -11,7 +18,11 @@ function ItemDetail(props) {
                 <div className="c">
                     <h3 className="description-title">ESTRENO ESPECIAL</h3>
                     <p className="description-paragraph">{props.detail.sinopsis}</p>
-                    <ItemCount initial={1} stock={props.detail.stock} />
+                    { filmsInCart === 0 ? 
+                        <ItemCount initial={1} stock={props.detail.stock} onAdd={addToCart}/>
+                        :
+                        <a href="/cart">VER CARRITO</a>
+                    }
                 </div>
             </div>
         </div>

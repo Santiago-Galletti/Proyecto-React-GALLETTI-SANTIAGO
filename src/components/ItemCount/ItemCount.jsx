@@ -13,10 +13,6 @@ function ItemCount(props) {
         props.initial < items ? setItems(items - 1) : setItems(items); 
     }
 
-    const onAdd = () => {
-        alert("Tu productos han sido añadidos al carrito!");
-    }
-
     return (
     <div className="hola">
         <div className="counter">
@@ -24,7 +20,7 @@ function ItemCount(props) {
             <p>{items}</p>
             <button className="counter-button" onClick={sumItems}>+</button>
         </div>
-        <button className="counter-confirm-button" onClick={onAdd}>Agregar al carrito</button>
+        <button className="counter-confirm-button" onClick={() => props.onAdd(items)}>Agregar al carrito</button>
     </div>
     )
 }

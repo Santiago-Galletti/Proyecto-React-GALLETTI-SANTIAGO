@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import "./itemListContainer.css"
 import ItemList from "../ItemList/ItemList";
-import data from "../../data/data";
+import dataJSON from "../../data/data";
 
 function getProducts () {
     return new Promise ((resolve) => {
-            resolve(data)
+            resolve(dataJSON)
     })
 }
 
