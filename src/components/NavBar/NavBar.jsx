@@ -22,7 +22,9 @@ function NavBar(){
                 <Link to="/category/spiderman">
                     <li className="nav-link">Spiderman</li>
                 </Link>
-                <CartWidget />
+                <Link to="/cart">
+                    <CartWidget />
+                </Link>
             </ul>
         </div>
     );

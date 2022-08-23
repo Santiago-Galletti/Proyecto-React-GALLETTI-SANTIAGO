@@ -3,17 +3,22 @@ import './App.css';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
+import Cart from "./components/Cart/Cart";
+import {CartContextProvider} from "./components/CartContext/CartContext"
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/detalle/:id" element={<ItemDetailContainer />} />
-          <Route path="/category/:category" element={<ItemListContainer />} />
-        </Routes>
+        <CartContextProvider>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+            <Route path="/category/:category" element={<ItemListContainer />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </CartContextProvider>
       </BrowserRouter>
     </div>
   );

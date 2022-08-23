@@ -24,7 +24,7 @@ function ItemListContainer () {
                 setData(filtrados)
             }     
         })
-    }, []);
+    }, [idCategory]);
     
     return (
         <div className="main">

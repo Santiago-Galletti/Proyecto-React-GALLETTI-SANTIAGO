@@ -1,4 +1,9 @@
-.icon{
-    font-size: 1.5rem;
+.cartWidget{
+    display: flex;
+    width: 50px;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row;
+    font-size: 1rem;
     color: white;
 }
