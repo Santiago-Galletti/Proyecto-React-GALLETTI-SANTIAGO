@@ -23,7 +23,7 @@ function Cart() {
                             <p style={{fontSize: "0.8rem"}}>Precio: ${item.price}</p>
                             <p style={{fontSize: "0.8rem"}}>Cantidad: {item.cantidad}</p>
                             <p style={{fontSize: "1rem"}}>Precio total: ${item.price * item.cantidad}</p>
-                            <button onClick={() => deleteItem(item)} className="buttonEliminar">Eliminar del carrito</button>
+                            <button onClick={() => deleteItem(item, item.cantidad)} className="buttonEliminar">Eliminar del carrito</button>
                         </div>
                     </div>
                 )

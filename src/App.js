@@ -17,6 +17,7 @@ function App() {
             <Route path="/detalle/:id" element={<ItemDetailContainer />} />
             <Route path="/category/:category" element={<ItemListContainer />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<h1>PAGE NOT FOUND 404</h1>}/>
           </Routes>
         </CartContextProvider>
       </BrowserRouter>

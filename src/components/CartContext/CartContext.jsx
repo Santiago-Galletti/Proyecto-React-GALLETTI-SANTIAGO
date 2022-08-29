@@ -7,22 +7,29 @@ export function CartContextProvider ({children}){
     const [cartAmount, setCartAmount] = useState([]);
 
     function addItem(item, quantity) {
-        let copyCart = [...cartAmount];
-        let itemId = item.id;
-        let alreadyExists = copyCart.some(item => item.id == itemId);
-        if(alreadyExists === false){
-            item.cantidad = quantity;
-            copyCart.push(item);
+        if(quantity > item.stock){
+            alert("No hay suficiente stock, agregue menos productos")
         }
         else{
-            let newQuantity = item.cantidad += quantity;
-            item.cantidad = newQuantity;
+            let copyCart = [...cartAmount];
+            let itemId = item.id;
+            item.stock = item.stock - quantity;
+            let alreadyExists = copyCart.some(item => item.id == itemId);
+            if(alreadyExists === false){
+                item.cantidad = quantity;
+                copyCart.push(item);
+            }
+            else{
+                let newQuantity = item.cantidad += quantity;
+                item.cantidad = newQuantity;
+            }
+            setCartAmount(copyCart);
         }
-        setCartAmount(copyCart);
     }
 
-    function deleteItem (item) {
+    function deleteItem (item, quantity) {
         let itemId = item.id
+        item.stock = item.stock + quantity;
         setCartAmount(cartAmount.filter(item => item.id !== itemId))
     }
 

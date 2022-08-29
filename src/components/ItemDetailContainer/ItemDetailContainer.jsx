@@ -1,25 +1,31 @@
 import React, {useEffect, useState} from 'react';
 import ItemDetail from "../ItemDetail/ItemDetail";
-import data from "../../data/data";
 import "./itemDetailContainer.css"
 import { useParams } from 'react-router-dom'
-
+import db from '../../services/firebase';
+import { collection, doc, getDoc } from 'firebase/firestore';
 
 
 function ItemDetailContainer() {
 
     const idURL = useParams().id
 
-    function getItemdetail () {
-        return new Promise ((resolve, reject) => {
-            let filmRequested = data.find( film => film.id == idURL);
-            filmRequested === undefined ? reject("Disculpe, por el momento no tenemos esa pelicula") : resolve(filmRequested)
-        })
-    }
+    function getItemDetail (id) {
+        return new Promise ((resolve) => {
+            const productsCollection = collection(db, "peliculas");
+            const productDetail = doc(productsCollection, id);
+            
+            getDoc(productDetail).then( snapshot => {
+                resolve(
+                    { ...snapshot.data(), id: snapshot.id}
+                );
+            });
+        });
+    };
 
     const [detail, setDetail] = useState([])
     useEffect(() => {
-        getItemdetail().then(item => {
+        getItemDetail(idURL).then(item => {
             setDetail(item)
         })
         .catch((error) => alert(error)) 

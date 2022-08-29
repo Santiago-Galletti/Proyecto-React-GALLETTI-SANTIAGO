@@ -16,11 +16,11 @@ function ItemDetail(props) {
     }
 
     return (
-        <div className="a">
+        <div className="product-container">
             <h2 className="product-title">{props.detail.name}</h2>
-            <div className="b">
+            <div className="product-info">
                 <img className="product-detail-img" src={props.detail.img} alt="image"/>
-                <div className="c">
+                <div className="product-add">
                     <h3 className="description-title">ESTRENO ESPECIAL</h3>
                     <p className="description-paragraph">{props.detail.sinopsis}</p>
                     <ItemCount initial={1} stock={props.detail.stock} onAdd={addToCart}/>
