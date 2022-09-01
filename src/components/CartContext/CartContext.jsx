@@ -42,9 +42,17 @@ export function CartContextProvider ({children}){
         totalQuantity += cartAmount[i].cantidad;
     }
 
+    
+    let totalPrice = 0;
+    for(let i = 0; cartAmount.length > i; i++){
+        let precioTotal = cartAmount[i].price;
+        let cantidadTotal = cartAmount[i].cantidad;
+        totalPrice += precioTotal * cantidadTotal;
+    }
+
     console.log(cartAmount)
     return(
-        <cartContext.Provider value={ {cartAmount, addItem, deleteItem, clearCart, totalQuantity} }>
+        <cartContext.Provider value={ {cartAmount, addItem, deleteItem, clearCart, totalQuantity, totalPrice} }>
             {children}
         </cartContext.Provider>
     )

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import "./itemListContainer.css"
 import ItemList from "../ItemList/ItemList";
 import db from '../../services/firebase';
-import { getDocs, collection, query, where, getDoc } from 'firebase/firestore'
+import { getDocs, collection, query, where } from 'firebase/firestore'
 
 function getProducts () {
     return new Promise ((resolve) => {
@@ -34,8 +34,8 @@ function getProductsByCategory  ( categoryParam ) {
 
 
 function ItemListContainer () {
-    const [data, setData] = useState([])
-    const categoryParam = useParams().category
+    const [data, setData] = useState([]);
+    const categoryParam = useParams().category;
 
     useEffect(() => {
             if(categoryParam === undefined){

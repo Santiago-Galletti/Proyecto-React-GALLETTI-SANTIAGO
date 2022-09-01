@@ -7,7 +7,7 @@ import { collection, doc, getDoc } from 'firebase/firestore';
 
 
 function ItemDetailContainer() {
-
+    const [loading, setLoading] = useState(true);
     const idURL = useParams().id
 
     function getItemDetail (id) {
@@ -19,7 +19,10 @@ function ItemDetailContainer() {
                 resolve(
                     { ...snapshot.data(), id: snapshot.id}
                 );
-            });
+            })
+            .finally(() => {
+                setLoading(false)
+            })
         });
     };
 
@@ -32,6 +35,18 @@ function ItemDetailContainer() {
     }, []);
 
     return (
+        loading === true ? 
+        <div className='holacomoestas'>
+            <div className="wrapper">
+                <div className="circle"></div>
+                <div className="circle"></div>
+                <div className="circle"></div>
+                <div className="shadow"></div>
+                <div className="shadow"></div>
+                <div className="shadow"></div>
+            </div>
+        </div>
+        :
         <div className="product-detail">
             <ItemDetail detail={detail} />
         </div>
