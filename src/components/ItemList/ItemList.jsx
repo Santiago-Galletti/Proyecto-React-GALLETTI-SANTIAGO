@@ -8,7 +8,7 @@ function ItemList(props) {
             {
             props.data.map((item) => {
                 return (<Item
-                key={item.id}
+                key={item.key}
                 id={item.id}
                 name={item.name}
                 img={item.img}

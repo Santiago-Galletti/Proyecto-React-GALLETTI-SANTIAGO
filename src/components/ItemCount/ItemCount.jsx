@@ -14,7 +14,7 @@ function ItemCount(props) {
     }
 
     return (
-    <div className="hola">
+    <div className="counter-container">
         <div className="counter">
             <button className="counter-button" onClick={restItems}>-</button>
             <p>{items}</p>

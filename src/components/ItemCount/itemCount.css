@@ -19,7 +19,7 @@
     transition: 0.5s;
 }
 
-.hola{
+.counter-container{
     display: flex;
     flex-flow: column;
     justify-content: space-around;

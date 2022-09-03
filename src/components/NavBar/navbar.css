@@ -8,7 +8,7 @@
 
 .nav-logo{
     width: 12rem;
-    height: 5rem;
+    height: 12rem;
 }
 
 .nav-list{
@@ -16,10 +16,44 @@
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
-    padding: 0rem 12rem 0rem 7rem;
+    padding: 0rem 15rem;
     list-style: none;
 }
 
 .nav-link{
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-list{
+        justify-content: space-between;
+        padding: 1rem 3rem 1rem 5rem;
+        font-size: 1rem;
+    }
+    .nav-logo{
+        width: 6rem;
+        height: 4rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav-list{
+        padding: 1rem 1rem 1rem 3rem;
+        font-size: 0.8rem;
+    }
+    .nav-logo{
+        width: 4rem;
+        height: 2rem;
+    }
+}
+
+@media screen and (max-width: 456px) {
+    .nav-list{
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+    .nav-logo{
+        width: 3rem;
+        height: 1rem;
+    }
 }

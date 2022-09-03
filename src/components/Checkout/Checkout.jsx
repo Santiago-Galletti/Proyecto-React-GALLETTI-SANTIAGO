@@ -74,7 +74,7 @@ function Checkout() {
     };
 
     if (orderStatus) {
-        return swal("Listo!", `Tu codigo de orden es: ${orderStatus}` , "success") &&
+        return swal("Listo!", `Tu codigo de orden es: ${orderStatus}, te va llegar un mail a ${userData.email}`, "success") &&
         (
             <div className='cartError'>
                 <p>Te quedaste con ganas de algo mas?</p>

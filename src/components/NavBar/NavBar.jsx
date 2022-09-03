@@ -8,7 +8,7 @@ function NavBar(){
         <div className="nav">
             <ul className="nav-list">
                 <Link to="/">
-                    <img className="nav-logo" src="http://assets.stickpng.com/images/585f9333cb11b227491c3581.png" alt="logo"></img>
+                    <img className="nav-logo" src="https://i.im.ge/2022/09/03/ObReu4.585f9333cb11b227491c3581.png" alt="logo"></img>
                 </Link>
                 <Link to="/">
                     <li className="nav-link">Home</li>
