@@ -24,3 +24,22 @@ Esto te dejará descargado el repositorio en esa carpeta.
 Esto instalará todos los paquetes y las dependencias necesarias para levantar el proyecto.
 
 - Paso 4: Ya teniendo todo listo ejecuta `npm run start` y tendrás la app funcionando en tu localhost!
+
+CONSEJO! POR LAS DUDAS ASEGURA DE TENER TODAS ESTAS DEPENDENCIAS EN TU package.json:
+
+`"dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-regular-svg-icons": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "firebase": "^9.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "sweetalert": "^2.1.2",
+    "web-vitals": "^2.1.4"
+  }`
