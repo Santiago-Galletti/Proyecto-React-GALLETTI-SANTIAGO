@@ -14,7 +14,7 @@ export function CartContextProvider ({children}){
             let copyCart = [...cartAmount];
             let itemId = item.id;
             item.stock = item.stock - quantity;
-            let alreadyExists = copyCart.some(item => item.id == itemId);
+            let alreadyExists = copyCart.some(item => item.id === itemId);
             if(alreadyExists === false){
                 item.cantidad = quantity;
                 copyCart.push(item);

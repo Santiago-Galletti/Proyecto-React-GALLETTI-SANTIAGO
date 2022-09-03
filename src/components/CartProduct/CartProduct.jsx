@@ -6,7 +6,7 @@ function CartProduct({item}) {
     return (
         <div className='cartProducts'>
             <div className='cartProducts-info'>
-                <img className="cartProducts-img" src={item.img} alt="image"/>
+                <img className="cartProducts-img" src={item.img} alt="film"/>
                 <h3 className='cartProducts-title'>{item.name}</h3>
                 <p className='cartProducts-description'>Precio: ${item.price}</p>
                 <p  className='cartProducts-description'>Cantidad: {item.cantidad}</p>

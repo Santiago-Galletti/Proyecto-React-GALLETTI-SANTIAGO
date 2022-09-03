@@ -29,7 +29,7 @@ function ItemDetail(props) {
         <div className="product-container">
             <h2 className="product-title">{props.detail.name}</h2>
             <div className="product-info">
-                <a href={props.detail.trailer} target="_blank"  className='product-img-container fade'><img className="product-detail-img" src={props.detail.img} alt="image"/></a>               
+                <a href={props.detail.trailer} target="_blank" rel="noopener noreferrer" className='product-img-container fade'><img className="product-detail-img" src={props.detail.img} alt="film"/></a>               
                 <div className="product-add">
                     <h3 className="description-title">ESTRENO ESPECIAL</h3>
                     <p className="description-paragraph">{props.detail.sinopsis}</p>

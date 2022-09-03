@@ -8,6 +8,7 @@ import { collection, doc, getDoc } from 'firebase/firestore';
 
 function ItemDetailContainer() {
     const [loading, setLoading] = useState(true);
+    const [detail, setDetail] = useState([])
     const idURL = useParams().id
 
     function getItemDetail (id) {
@@ -26,12 +27,11 @@ function ItemDetailContainer() {
         });
     };
 
-    const [detail, setDetail] = useState([])
     useEffect(() => {
         getItemDetail(idURL).then(item => {
             setDetail(item)
         })
-        .catch((error) => alert(error)) 
+    //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
